@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -32,8 +33,10 @@ public class SampleController {
 
     @RequestMapping("/validation")
     @ResponseBody
-    String withValidation(@Valid Input input) {
-        System.out.println(input);
+    String withValidation(@Valid Input input, BindingResult bindResult) {
+        if(bindResult.hasErrors()) {
+            bindResult.getAllErrors().stream().forEach(objectError -> System.out.println(objectError.toString()));
+        }
         return "Success";
     }
 
