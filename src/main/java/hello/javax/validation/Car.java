@@ -1,6 +1,7 @@
 package hello.javax.validation;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -20,14 +21,18 @@ public class Car {
     @CheckCase(caseMode = CaseMode.UPPER)
     private String licensePlate;
 
+    @NonNull
+    private String sex;
+
     @Min(2)
     private int seatCount;
 
-    public Car(String manufacturer, String licencePlate, int seatCount) {
+    public Car(String manufacturer, String licencePlate, int seatCount, /*@NonNull*/ String sex) {
 
         this.manufacturer = manufacturer;
         this.licensePlate = licencePlate;
         this.seatCount = seatCount;
+        this.sex = sex;
     }
 
 }

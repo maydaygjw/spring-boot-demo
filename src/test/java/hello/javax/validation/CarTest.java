@@ -26,7 +26,7 @@ public class CarTest {
     @Test
     public void testLicensePlateNotUpperCase() {
 
-        Car car = new Car("Morris", "dd-ab-123", 4);
+        Car car = new Car("Morris", "dd-ab-123", 4, "F");
 
         Set<ConstraintViolation<Car>> constraintViolations =
                 validator.validate(car);
@@ -39,11 +39,22 @@ public class CarTest {
     @Test
     public void carIsValid() {
 
-        Car car = new Car("Morris", "DD-AB-123", 4);
+        Car car = new Car("Morris", "DD-AB-123", 4, "F");
 
         Set<ConstraintViolation<Car>> constraintViolations =
                 validator.validate(car);
 
         assertEquals(0, constraintViolations.size());
+    }
+
+    @Test
+    public void testLombokNonNull() {
+        try {
+            Car car = new Car("Morris", "DD-AB-123", 4, null);
+            car.setSex(null);
+        }catch (NullPointerException e) {
+            System.out.println("THis is expected");
+        }
+
     }
 }
