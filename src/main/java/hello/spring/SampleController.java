@@ -1,25 +1,15 @@
 package hello.spring;
 
-<<<<<<< HEAD:src/main/java/hello/SampleController.java
+
 import lombok.Data;
 import lombok.ToString;
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-=======
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
->>>>>>> e300c262f5c1c8a6bdc0d02e08c0dc9d04a7a0cc:src/main/java/hello/spring/SampleController.java
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
